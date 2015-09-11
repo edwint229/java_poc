@@ -1,0 +1,10 @@
+body {
+	padding-top: 50px;
+}
+
+.container {
+	width: 600px;
+	height: 900px;
+	padding: 0 auto;
+	margin: 0 auto;
+}

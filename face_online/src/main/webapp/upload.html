@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Face Plus Plus App - Upload Photo</title>
+<meta name="description" content="Face Plus Plus App">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="vendor/bootstrap-3.3.2-dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="vendor/bootstrap-3.3.2-dist/css/bootstrap-theme.min.css" />
+<link rel="stylesheet" href="vendor/bootstrap-3.3.2-dist/css/docs.min.css" />
+<link rel="stylesheet" href="vendor/bootstrap-fileinput/css/fileinput.min.css" />
+<link rel="stylesheet" href="vendor/bootstrap-table/bootstrap-table.min.css" />
+</head>
+<body>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">Face Plus Plus App</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Search Type<span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#">Person Name</a></li>
+							<li class="divider"></li>
+							<li><a href="#">Group Name</a></li>
+							<li class="divider"></li>
+							<li><a href="#">Faceset Name</a></li>
+						</ul></li>
+				</ul>
+				<form class="navbar-form navbar-left" role="search">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="keywords">
+					</div>
+					<button type="submit" class="btn btn-default">Submit</button>
+				</form>
+				<form class="navbar-form navbar-right" role="search">
+					<a id="btn_analysis" class="btn btn-primary btn-md" href="#" role="button">Analysis My Face</a> <a id="btn_identify" class="btn btn-primary btn-md" href="#" role="button">Identify
+						My Face</a>
+				</form>
+			</div>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="bs-callout bs-callout-info" id="callout-glyphicons-location">
+			<h4>Please Upload Your Face Photo</h4>
+			<p>This App can analysis your gender, age, glass and smiling by your face photo.</p>
+		</div>
+		<table id="resultData" data-card-view="true">
+			<thead>
+				<tr>
+					<th data-field="age">Age</th>
+					<th data-field="gender">Gender</th>
+					<th data-field="race">Race</th>
+					<th data-field="smiling">Smiling</th>
+					<th data-field="glass">Glass</th>
+					<th data-field="pose">Pose</th>
+				</tr>
+			</thead>
+		</table>
+		<div class="row">
+			<div class="col-sm-8">
+				<label class="control-label">Select File</label> <input id="file_upload" name="file_upload" type="file" accept="image/*" class="file-loading" />
+			</div>
+		</div>
+	</div>
+	<!-- JavaScript Here -->
+	<script src="vendor/jquery-1.11.2.min.js"></script>
+	<script src="vendor/bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
+	<script src="vendor/bootstrap-fileinput/js/fileinput.js"></script>
+	<script src="vendor/bootstrap-table/bootstrap-table.min.js"></script>
+	<script src="vendor/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+	<script src="js/upload.js"></script>
+
+</body>
+</html>

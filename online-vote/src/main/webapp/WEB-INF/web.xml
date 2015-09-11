@@ -1,0 +1,71 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+	<display-name>Lucifer Online Applications</display-name>
+	<!-- The definition of the Root Spring Container shared by all Servlets 
+		and Filters -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/spring/root-context.xml</param-value>
+	</context-param>
+
+	<!-- Creates the Spring Container shared by all Servlets and Filters -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+
+	<!-- Processes application requests -->
+	<servlet>
+		<servlet-name>appServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
+		</init-param>
+		<load-on-startup>3</load-on-startup>
+		<async-supported>true</async-supported>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>appServlet</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+	<!-- Disables Servlet Container welcome file handling. Needed for compatibility 
+		with Servlet 3.0 and Tomcat 7.0 -->
+	<welcome-file-list>
+		<welcome-file></welcome-file>
+	</welcome-file-list>
+
+	<!-- Session Configure -->
+	<session-config>
+		<session-timeout>30</session-timeout>
+	</session-config>
+
+	<!-- error handler -->
+	<error-page>
+		<error-code>404</error-code>
+		<location>/notfound</location>
+	</error-page>
+
+	<!-- Prior to Servlet 3.0 define either an error-code or an exception-type 
+		but not both -->
+	<error-page>
+		<!-- Define error page to react on Java exception -->
+		<exception-type>java.lang.Throwable</exception-type>
+		<!-- The location of the resource to display in response to the error will 
+			point to the Spring MVC handler method -->
+		<location>/error</location>
+	</error-page>
+
+	<error-page>
+		<error-code>503</error-code>
+		<location>/error</location>
+	</error-page>
+
+	<!-- With Servlet 3.0 and above general error page is possible -->
+	<error-page>
+		<location>/error</location>
+	</error-page>
+</web-app>
