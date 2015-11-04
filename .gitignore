@@ -38,6 +38,7 @@ tmp/**/*
 *~.nib
 local.properties
 .loadpath
+.idea/
 
 # External tool builders
 .externalToolBuilders/
@@ -60,3 +61,5 @@ test-output
 # /profile-development.properties
 /profile-development.properties
 /src/main/resources/git.properties
+
+RemoteSystemsTempFiles/
